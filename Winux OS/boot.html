@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Winux 启动中</title>
+    <style>
+        body { margin:0; background:#000; overflow:hidden; height:100vh; display:flex; justify-content:center; align-items:center; }
+        .boot-screen { color:white; text-align:center; font-family:"Microsoft YaHei"; }
+        .progress-bar { width:300px; height:20px; border:1px solid #0078d7; margin:20px auto; overflow:hidden; }
+        .progress { height:100%; width:0; background:#0078d7; transition:width 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="boot-screen">
+        <h1>Winux 操作系统</h1>
+        <p>正在启动系统...</p>
+        <div class="progress-bar"><div class="progress" id="boot-progress"></div></div>
+    </div>
+    <script>
+        let progress = 0;
+        const bootInterval = setInterval(() => {
+            progress += Math.random()*10;
+            document.getElementById('boot-progress').style.width = `${progress}%`;
+            if(progress >= 100) {
+                clearInterval(bootInterval);
+                setTimeout(() => { window.location.href = 'desktop.html'; },500);
+            }
+        },300);
+    </script>
+</body>
+</html>

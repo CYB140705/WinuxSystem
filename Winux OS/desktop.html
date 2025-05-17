@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Winux 桌面</title>
+    <link rel="stylesheet" href="winux.css">
+</head>
+<body>
+    <div id="desktop">
+        <div class="desktop-icon" onclick="winux.createWindow('文件管理器')">
+            <img src="explorer.png" width="48"><div>文件管理器</div>
+        </div>
+        <div class="desktop-icon" onclick="winux.createWindow('浏览器')">
+            <img src="browser.png" width="48"><div>浏览器</div>
+        </div>
+    </div>
+    <div id="taskbar">
+        <div id="start-btn"><img src="WinICON.png"></div>
+    </div>
+    <div id="contextMenu" class="context-menu">
+        <div class="menu-item" onclick="winux.createWindow('新建窗口')">新建窗口</div>
+        <div class="menu-item" onclick="winux.refreshDesktop()">刷新桌面</div>
+        <div class="menu-separator"></div>
+        <div class="menu-item" onclick="winux.createWindow('系统设置')">系统设置</div>
+    </div>
+    <script src="winux.js"></script>
+</body>
+</html>
